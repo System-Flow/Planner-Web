@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using PlannerWeb.Domain.Commands.Contracts;
 using PlannerWeb.Domain.Commands.KnowledgeWallCommads;
@@ -21,7 +22,7 @@ namespace PlannerWeb.Domain.Handlers
         public ICommandResult Handle(CreateCommandKnowledgeWall command)
         {
             
-            var knowledgeWall = new KnowledgeWall(command.ListOfKnowledgeWall);
+            var knowledgeWall = new KnowledgeWall(Guid.NewGuid(),command.TextKnowledgeWall);
 
             // Salva no banco
             _repository.Create(knowledgeWall);

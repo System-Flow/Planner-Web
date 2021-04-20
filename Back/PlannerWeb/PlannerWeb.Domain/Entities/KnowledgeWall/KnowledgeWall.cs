@@ -1,16 +1,20 @@
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PlannerWeb.Domain.Entities.KnowledgeWall
-{
+{   
+    
     public class KnowledgeWall : BaseEntity
     {
-
-        public KnowledgeWall(List<string> listOfKnowledge)
+        public KnowledgeWall(Guid idUser, string textKnowledgeWall)
         {
-            ListOfKnowledge = listOfKnowledge;
+            IdUser = idUser;
+            TextKnowledgeWall = textKnowledgeWall;
         }
 
-        public  List<string>  ListOfKnowledge { get; private set; }
+        public Guid IdUser { get; private set; }
+        public string TextKnowledgeWall { get; private set; }
         
     }
 }

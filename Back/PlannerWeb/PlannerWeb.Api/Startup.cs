@@ -27,10 +27,8 @@ namespace PlannerWeb.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            //trocar quando tiver o banco montado 
-            //services.AddDbContext<DataContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("connectionString")));
-            services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
-            
+            services.AddDbContext<DataContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("PlannerWeb")));
+           
             services.AddTransient<IKnowledgeWall, KnowledgeWallRepository>();
             services.AddTransient<KnowledgeWallHandler, KnowledgeWallHandler>();
             
