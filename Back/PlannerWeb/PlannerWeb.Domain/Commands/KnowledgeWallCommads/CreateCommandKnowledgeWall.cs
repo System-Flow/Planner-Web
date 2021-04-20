@@ -11,14 +11,14 @@ namespace PlannerWeb.Domain.Commands.KnowledgeWallCommads
     {
        public CreateCommandKnowledgeWall()
        {
-           ListOfKnowledgeWall =  new List<string>();
+            TextKnowledgeWall =  string.Empty;
        }
 
-        public CreateCommandKnowledgeWall(List<string> listOfKnowledgeWall )
+        public CreateCommandKnowledgeWall(string textKnowledgeWall)
         {
-            ListOfKnowledgeWall = listOfKnowledgeWall;
+            TextKnowledgeWall = textKnowledgeWall;
         }
-        public List<string> ListOfKnowledgeWall { get; set; }
+        public string TextKnowledgeWall { get; set; }
 
         public void Validate()
         {

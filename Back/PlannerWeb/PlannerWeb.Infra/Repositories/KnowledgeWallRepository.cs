@@ -19,15 +19,15 @@ namespace PlannerWeb.Infra.Repositories
 
         public void Create(KnowledgeWall Object)
         {
-           this._context.KnowledgeWalls.Add(Object);
+           this._context.KnowledgeWall.Add(Object);
            this._context.SaveChanges();
         }
 
-        public IEnumerable<KnowledgeWall> GetAll() => this._context.KnowledgeWalls.ToList(); 
+        public IEnumerable<KnowledgeWall> GetAll() => this._context.KnowledgeWall.ToList(); 
        
         public KnowledgeWall GetById(Guid id)
         {
-           var KnowledgeWall = this._context.KnowledgeWalls.FirstOrDefault(x => x.Id == id);
+           var KnowledgeWall = this._context.KnowledgeWall.FirstOrDefault(x => x.Id == id);
            return KnowledgeWall;
         }
 

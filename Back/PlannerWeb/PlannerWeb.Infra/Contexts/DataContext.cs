@@ -7,7 +7,7 @@ namespace PlannerWeb.Infra.Context
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
-        public DbSet<KnowledgeWall> KnowledgeWalls { get; set; }
+        public DbSet<KnowledgeWall> KnowledgeWall { get; set; }
 
         //DEPOIS DE TODO O SQUEMA DO BANCO FETIO REALIZAR A MANUPILAÇÃO PELO ONMODELCREATING
     }
